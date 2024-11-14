@@ -1,10 +1,9 @@
+#########
+# NOTES #
+#########
 
-#f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
-
-Import-Module -Name Microsoft.WinGet.CommandNotFound
-#f45873b3-b655-43a6-b217-97c00aa0db58
-
-
+# Unblock-File ***.ps1
+# Permite ejecutar un archivo PowerShell sin importar la restriccion.
 
 #
 # PERSONAL SETTINGS
@@ -24,9 +23,7 @@ function wetransfer($action, $file) {
 
 # New Installation
 function TInstall() {
-    sudo winget install eza-community.eza GnuWin32.Grep JanDeDobbeleer.OhMyPosh Git.Git Microsoft.PowerShell --silent
-    git clone "https://github.com/Torrenava/.files" "~/Documents/.files"
-    mv "~/Documents/.files/Windows/Microsoft.PowerShell_profile.ps1" $PROFILE
+    sudo winget install eza-community.eza GnuWin32.Grep JanDeDobbeleer.OhMyPosh Git.Git Microsoft.PowerShell GNU.nano schollz.croc sharkdp.bat --silent
 }
 
 # Comandos ls
