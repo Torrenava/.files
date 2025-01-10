@@ -1,3 +1,9 @@
-.git
-Scripts
-.windows
+\.git
+\.gitignore
+\.windows
+
+\Scripts
+
+README.md
+.stow-local-ignore
+

@@ -21,7 +21,7 @@ ZSH_THEME="robbyrussell"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza)
 
 # | Plugins Download Commands |
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -36,6 +36,9 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=es_ES.UTF-8
+export LC_ALL=es_ES.UTF-8
+export LANGUAGE=es_ES.UTF-8
+
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -116,13 +119,13 @@ alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
 alias bat="batcat"
 
 # Aliases EZA (LS)
-alias ls='eza --color=always --group-directories-first --icons'
-alias ll='eza -la --icons --octal-permissions --group-directories-first'
-alias l='eza -bGF --header --git --color=always --group-directories-first --icons'
-alias llm='eza -lbGd --header --git --sort=modified --color=always --group-directories-first --icons'
-alias la='eza --long --all --group --group-directories-first'
-alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --color=always --group-directories-first --icons'
+#alias ls='eza --color=always --group-directories-first --icons'
+#alias ll='eza -la --icons --octal-permissions --group-directories-first'
+#alias l='eza -bGF --header --git --color=always --group-directories-first --icons'
+#alias llm='eza -lbGd --header --git --sort=modified --color=always --group-directories-first --icons'
+#alias la='eza --long --all --group --group-directories-first'
+#alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --color=always --group-directories-first --icons'
 
-alias lS='eza -1 --color=always --group-directories-first --icons'
-alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
+#alias lS='eza -1 --color=always --group-directories-first --icons'
+#alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -E '^\.'"
