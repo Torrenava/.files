@@ -118,6 +118,7 @@ alias rzshc="source ~/.zshrc" # Reload ZSH Config
 
 # Aliases Miscelaneos
 alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
+alias mc="micro"
 
 # Aliases BAT
 alias bat="batcat"
