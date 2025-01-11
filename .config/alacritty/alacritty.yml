@@ -1,0 +1,43 @@
+window:
+  padding:
+    x: 15
+    y: 15
+  opacity: 0.90
+
+scrolling:
+  history: 100
+
+font:
+  normal:
+    family: CaskaydiaCove Nerd Font
+    style: Medium
+
+  bold:
+    family: CaskaydiaCove Nerd Font
+    style: Bold
+
+  size: 10.0
+
+colors:
+  primary:
+    background: "#303446" # base
+    foreground: "#C6D0F5" # text
+
+  normal:
+    black: "#51576D" # surface1
+    red: "#E78284" # red
+    green: "#A6D189" # green
+    yellow: "#E5C890" # yellow
+    blue: "#8CAAEE" # blue
+    magenta: "#F4B8E4" # pink
+    cyan: "#81C8BE" # teal
+    white: "#B5BFE2" # subtext1
+  bright:
+    black: "#626880" # surface2
+    red: "#E78284" # red
+    green: "#A6D189" # green
+    yellow: "#E5C890" # yellow
+    blue: "#8CAAEE" # blue
+    magenta: "#F4B8E4" # pink
+    cyan: "#81C8BE" # teal
+    white: "#A5ADCE" # subtext0
