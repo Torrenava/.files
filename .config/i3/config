@@ -13,8 +13,13 @@
 exec --no-startup-id picom
 
 # Eliminar Procesos Zombie de Polybar
-exec_always killall polybar
+exec_always killall polybar 
+# Ejecutar un nuevo Polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+# Establecemos nuestro Wallpaper
+exec_always feh --bg-scale ~/Pictures/Wallpapers/BlueWindowWallpaper.png
+# CatppuccinWallpaper.png
+# BlueWindowWallpaper.png
 
 set $mod Mod1
 
