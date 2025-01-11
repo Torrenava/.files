@@ -1,7 +1,7 @@
 \.git
 \.gitignore
 \.windows
-\.config\eza
+\.config/eza
 
 \Scripts
 
