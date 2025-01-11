@@ -13,9 +13,12 @@
 # Variables ZSH
 export ZSH="$HOME/.oh-my-zsh"
 
-# Otras Variables
-export "MICRO_TRUECOLOR=1"
+# Otras Configuraciones
+export MICRO_TRUECOLOR="1"
 export EZA_DEFAULT_OPTIONS="--icons"
+zstyle ':omz:plugins:eza' 'icons' yes
+
+
 
 # Config ZSH
 ZSH_THEME="robbyrussell"
