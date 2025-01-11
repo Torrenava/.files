@@ -3,5 +3,5 @@
 # Installation
 ## Ubuntu
 ```bash
-sudo apt install xstow; cd ~/.files; xstow .
+sudo apt install stow; cd ~/.files; stow .
 ```
