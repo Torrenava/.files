@@ -15,13 +15,14 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Otras Variables
 export "MICRO_TRUECOLOR=1"
+export EZA_DEFAULT_OPTIONS="--icons"
 
 # Config ZSH
 ZSH_THEME="robbyrussell"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf)
 
 # | Plugins Download Commands |
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -117,6 +118,7 @@ alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
 
 # Aliases BAT
 alias bat="batcat"
+alias cat="batcat -pp"
 
 # Aliases EZA (LS)
 #alias ls='eza --color=always --group-directories-first --icons'
