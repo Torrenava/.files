@@ -25,7 +25,7 @@ ZSH_THEME="robbyrussell"
 HIST_STAMPS="dd/mm/yyyy"
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide)
 
 # | Plugins Download Commands |
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -117,8 +117,10 @@ alias zshc="micro ~/.zshrc" # ZSH Config
 alias rzshc="source ~/.zshrc" # Reload ZSH Config
 
 # Aliases Miscelaneos
-alias update='sudo apt update && sudo apt upgrade -y && sudo snap refresh'
+alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
 alias mc="micro"
+alias cd="z"
+alias ci="zi"
 
 # Aliases BAT
 alias bat="batcat"
