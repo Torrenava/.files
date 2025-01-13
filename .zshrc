@@ -124,6 +124,7 @@ alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
 alias mc="micro"
 alias cd="z"
 alias ci="zi"
+alias open="xdg-open"
 
 # Aliases BAT
 alias bat="batcat"
