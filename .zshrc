@@ -120,7 +120,7 @@ alias zshc="micro ~/.zshrc" # ZSH Config
 alias rzshc="source ~/.zshrc" # Reload ZSH Config
 
 # Aliases Miscelaneos
-alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
+alias update="sudo apt update && sudo apt upgrade -y"
 alias mc="micro"
 alias cd="z"
 alias ci="zi"
