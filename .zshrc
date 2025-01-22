@@ -139,8 +139,9 @@ alias cat="batcat -pp"
 #alias lx='eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale --color=always --group-directories-first --icons'
 
 #alias lS='eza -1 --color=always --group-directories-first --icons'
-#alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
+alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -E '^\.'"
+
 
 # Cargamos Starship
 eval "$(starship init zsh)"
