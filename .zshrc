@@ -15,6 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Otras Configuraciones
 export MICRO_TRUECOLOR="1"
+export FZF_DEFAULT_OPTS="--preview='batcat -pp --color=always {}'"
 #export EZA_DEFAULT_OPTIONS="--icons"
 zstyle ':omz:plugins:eza' 'icons' yes
 zstyle ':completion:*' menu no
