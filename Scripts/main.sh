@@ -25,5 +25,6 @@ sudo curl -sS https://starship.rs/install.sh | sh
 ./InstallFonts.sh
 ./InstallZshPlugins.sh
 ./InstallEzaTheme.sh
+./InstallMicroPlugins.sh
 
 echo -e " [I] Completed. Run 'cd ~/.files; stow .' to link dotfiles."

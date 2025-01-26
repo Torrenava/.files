@@ -2,5 +2,8 @@
     "Alt-/": "lua:comment.comment",
     "Ctrl-Shift-Down": "SpawnMultiCursorDown",
     "Ctrl-Shift-Up": "SpawnMultiCursorUp",
+    "Ctrl-o": "command:fzf",
+    "CtrlP": "command:palettero",
+    "CtrlSpace": "command:palettero",
     "CtrlUnderscore": "lua:comment.comment"
 }
