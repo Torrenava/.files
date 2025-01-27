@@ -15,17 +15,18 @@ export ZSH="$HOME/.oh-my-zsh"
 
 # Otras Configuraciones
 export MICRO_TRUECOLOR="1"
-export FZF_DEFAULT_OPTS="--preview='batcat -pp --color=always {}'"
+#export FZF_DEFAULT_OPTS="--preview='batcat -pp --color=always {}'"
 #export EZA_DEFAULT_OPTIONS="--icons"
 zstyle ':omz:plugins:eza' 'icons' yes
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:z:*' fzf-preview 'ls'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza'
 
 
 
 
 # Config ZSH
 ZSH_THEME="" # robbyrussell
+# Deshabilitado por usar Starship
 HIST_STAMPS="dd/mm/yyyy"
 
 # Plugins
@@ -144,5 +145,6 @@ alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -E '^\.'"
 
 
-# Cargamos Starship
+# Cargamos Starship y fzf
 eval "$(starship init zsh)"
+source <(fzf --zsh)
