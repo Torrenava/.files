@@ -123,7 +123,7 @@ alias rzshc="source ~/.zshrc" # Reload ZSH Config
 
 # Aliases Miscelaneos
 alias update="sudo apt update && sudo apt upgrade -y"
-alias mc="micro"
+alias m="micro"
 alias cd="z"
 alias ci="zi"
 alias open="xdg-open"
