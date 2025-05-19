@@ -33,11 +33,15 @@ function ls() {
 }
 
 function ll() {
-    eza --icons -l @Args
+    eza --icons --sort modified --smart-group -l @Args
 }
 
 function la(){
-    eza --icons -a @Args
+    eza --icons --sort modified --smart-group -a @Args
+}
+
+function lD(){
+    eza --icons -D @Args
 }
 
 # Add Grep Path
