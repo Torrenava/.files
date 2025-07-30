@@ -1,5 +1,5 @@
 {
-    "Alt-/": "lua:comment.comment",
+    "Alt-c": "lua:comment.comment",
     "Ctrl-Shift-Down": "SpawnMultiCursorDown",
     "Ctrl-Shift-Up": "SpawnMultiCursorUp",
     "Ctrl-o": "command:fzf",
