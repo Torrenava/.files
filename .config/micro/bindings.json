@@ -1,10 +1,13 @@
 {
+    "Alt-/": "lua:comment.comment",
     "Alt-c": "lua:comment.comment",
     "Ctrl-Shift-Down": "SpawnMultiCursorDown",
     "Ctrl-Shift-Up": "SpawnMultiCursorUp",
     "Ctrl-o": "command:fzf",
+    "Ctrl-w": "DeleteWordLeft",
     "CtrlP": "command:palettero",
     "CtrlSpace": "command:palettero",
     "CtrlUnderscore": "lua:comment.comment",
-    "Ctrl-w": "DeleteWordLeft"
+    "F4": "command:jumptag",
+    "F5": "lua:wc.wordCount"
 }

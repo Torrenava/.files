@@ -148,3 +148,6 @@ alias l.="eza -a | grep -E '^\.'"
 # Cargamos Starship y fzf
 eval "$(starship init zsh)"
 source <(fzf --zsh)
+
+# Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
