@@ -1,0 +1,11 @@
+{
+    "Alt-/": "lua:comment.comment",
+    "CtrlDelete": "DeleteWordLeft",
+    "CtrlP": "command:palettero",
+    "CtrlSpace": "command:palettero",
+    "CtrlUnderscore": "lua:comment.comment",
+    "CtrlW": "DeleteWordLeft",
+    "F4": "command:jumptag",
+    "F5": "lua:wc.wordCount",
+    "OldBackspace": "DeleteWordLeft"
+}

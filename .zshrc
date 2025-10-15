@@ -30,12 +30,13 @@ ZSH_THEME="" # robbyrussell
 HIST_STAMPS="dd/mm/yyyy"
 
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide fzf-tab)
 
-# | Plugins Download Commands |
+# | Plugins Download Commands | Mantenidos en la carpeta Scripts
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 # git clone https://github.com/MichaelAquilina/zsh-you-should-use.git $ZSH_CUSTOM/plugins/you-should-use
+# git clone https://github.com/Aloxaf/fzf-tab.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,6 +128,9 @@ alias m="micro"
 alias cd="z"
 alias ci="zi"
 alias open="xdg-open"
+
+# Alias SSH (s) : Lista los hosts disponibles en el archivo de config de SSH.
+alias s='ssh $(awk "/^Host /{print \$2}" ~/.ssh/config | fzf --prompt="ssh> ")'
 
 # Aliases BAT
 alias bat="batcat"
