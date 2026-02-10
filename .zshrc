@@ -110,6 +110,18 @@ function extract {
     done
 }
 
+extractPorts () {
+  ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')" 
+  ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)" 
+  echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+  echo -e "\t[*] IP Address: $ip_address" >> extractPorts.tmp
+  echo -e "\t[*] Open ports: $ports\n" >> extractPorts.tmp
+  echo $ports | tr -d '\n' | xclip -sel clip
+  echo -e "[*] Ports copied to clipboard\n" >> extractPorts.tmp
+  /usr/bin/batcat extractPorts.tmp
+  rm extractPorts.tmp
+}
+
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in
@@ -153,5 +165,6 @@ alias l.="eza -a | grep -E '^\.'"
 eval "$(starship init zsh)"
 source <(fzf --zsh)
 
+export PATH="$PATH:/root/.local/bin"
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
