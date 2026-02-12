@@ -31,6 +31,7 @@ HIST_STAMPS="dd/mm/yyyy"
 
 # Plugins
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide fzf-tab)
+# Es necesario activar fzf-tab con el comando "enable-fzf-tab".
 
 # | Plugins Download Commands | Mantenidos en la carpeta Scripts
 # git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
