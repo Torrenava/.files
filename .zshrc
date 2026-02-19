@@ -111,16 +111,33 @@ function extract {
     done
 }
 
-function extractPorts {
-  ports="$(cat $1 | grep -oP '\d{1,5}/open' | awk '{print $1}' FS='/' | xargs | tr ' ' ',')" 
-  ip_address="$(cat $1 | grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' | sort -u | head -n 1)" 
-  echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
-  echo -e "\t[*] IP Address: $ip_address" >> extractPorts.tmp
-  echo -e "\t[*] Open ports: $ports\n" >> extractPorts.tmp
-  echo $ports | tr -d '\n' | xclip -sel clip
-  echo -e "[*] Ports copied to clipboard\n" >> extractPorts.tmp
-  /usr/bin/batcat extractPorts.tmp
-  rm extractPorts.tmp
+function extractPorts() {
+    if [ -z "$1" ]; then
+        echo "Uso: extractPorts <archivo_nmap>"
+        return 1
+    fi
+
+    ports="$(grep -oP '\d{1,5}/open' "$1" | awk '{print $1}' FS='/' | xargs | tr ' ' ',')"
+    ip_address="$(grep -oP '\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}' "$1" | sort -u | head -n 1)"
+
+    echo -e "\n[*] Extracting information...\n" > extractPorts.tmp
+    echo -e "\t[*] IP Address: $ip_address" >> extractPorts.tmp
+    echo -e "\t[*] Open ports: $ports\n" >> extractPorts.tmp
+
+    echo "$ports" | tr -d '\n' | xclip -sel clip 2>/dev/null
+    if [ $? -eq 0 ]; then
+        echo -e "[*] Ports copied to clipboard\n" >> extractPorts.tmp
+    fi
+
+    if command -v batcat &> /dev/null; then
+        batcat extractPorts.tmp
+    elif command -v bat &> /dev/null; then
+        bat extractPorts.tmp
+    else
+        cat extractPorts.tmp
+    fi
+
+    rm extractPorts.tmp
 }
 
 # Set personal aliases, overriding those provided by Oh My Zsh libs,
