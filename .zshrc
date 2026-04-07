@@ -178,11 +178,16 @@ alias cat="batcat -pp"
 alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -E '^\.'"
 
+export PATH="$PATH:/root/.local/bin"
 
-# Cargamos Starship y fzf
+# Starship
 eval "$(starship init zsh)"
+
+# fzf
 source <(fzf --zsh)
 
-export PATH="$PATH:/root/.local/bin"
+# fzf-tab
+enable-fzf-tab
+
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
