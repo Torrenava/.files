@@ -46,3 +46,6 @@ function lD(){
 
 # Add Grep Path
 $env:Path += ";C:\Program Files (x86)\GnuWin32\bin"
+
+# Starship
+Invoke-Expression (&starship init powershell)
