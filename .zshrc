@@ -191,3 +191,6 @@ enable-fzf-tab
 
 # Homebrew
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+# pipx
+export PATH="$PATH:/home/torre/.local/bin"
