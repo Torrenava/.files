@@ -59,7 +59,7 @@ step_apt() {
     fi
     check "System packages upgraded"
 
-    spin "Installing packages: ${APT_PACKAGES[*]}"
+    spin "Installing system packages..."
     if ! run sudo apt install -y "${APT_PACKAGES[@]}"; then
         throw "apt install failed"
         exit 1
@@ -172,7 +172,7 @@ step_homebrew() {
         return 1
     fi
 
-    spop
+    check "Homebrew installer downloaded"
     spin "Installing homebrew (this may take a few minutes)..."
     NONINTERACTIVE=1 /bin/bash "$tmp_script" >/tmp/brew-install.log 2>&1 || {
         rm -f "$tmp_script"
@@ -426,21 +426,25 @@ main() {
     step_apt
 
     line
+    line
     step_ohmyzsh
     step_zsh_plugins
     step_starship
 
+    line
     line
     step_homebrew && step_pipx || true
     step_nvm
     step_opencode
 
     line
+    line
     step_fonts
     step_eza_theme
     step_micro_plugins
     step_git_config
 
+    line
     line
     step_stow
 
