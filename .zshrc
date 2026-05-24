@@ -190,14 +190,28 @@ source <(fzf --zsh)
 enable-fzf-tab
 
 # Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+if  command -v brew &>/dev/null; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
-# opencode
-export PATH=/home/torre/.opencode/bin:$PATH
+# OpenCode
+if  command -v opencode &>/dev/null; then
+    export PATH=/home/torre/.opencode/bin:$PATH
+fi
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# NVM (Node Version Manager)
+if  command -v nvm &>/dev/null; then
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+fi
 
-# pipx
-export PATH="$PATH:/home/torre/.local/bin"
+# Pipx to PATH
+if command -v pipx &>/dev/null; then
+    export PATH="$PATH:/home/torre/.local/bin"
+fi
+
+# lolcat MOTD
+if command -v lolcat &>/dev/null && [[ -f ~/Documents/MOTD.txt ]]; then
+    lolcat ~/Documents/MOTD.txt
+fi
