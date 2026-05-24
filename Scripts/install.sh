@@ -187,7 +187,7 @@ step_homebrew() {
     fi
 
     spin "Installing doge via homebrew..."
-    if brew install doge 2>/tmp/doge-install.log; then
+    if brew install doge >/tmp/doge-install.log 2>&1; then
         check "doge installed"
     else
         warn "doge installation failed (check /tmp/doge-install.log)"
@@ -310,7 +310,7 @@ step_fonts() {
     fi
 
     rm -rf "$tmp_dir"
-    fc-cache -fv 2>/dev/null || true
+    fc-cache -fv >/dev/null 2>&1 || true
     check "CascadiaCode Nerd Font installed"
 }
 
@@ -428,20 +428,27 @@ main() {
     line
     line
     step_ohmyzsh
+    line
     step_zsh_plugins
+    line
     step_starship
 
     line
     line
     step_homebrew && step_pipx || true
+    line
     step_nvm
+    line
     step_opencode
 
     line
     line
     step_fonts
+    line
     step_eza_theme
+    line
     step_micro_plugins
+    line
     step_git_config
 
     line
