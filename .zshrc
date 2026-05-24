@@ -178,7 +178,7 @@ alias cat="batcat -pp"
 alias lt='eza --tree --level=2 --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -E '^\.'"
 
-export PATH="$PATH:/root/.local/bin"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Starship
 eval "$(starship init zsh)"
@@ -201,9 +201,6 @@ export PATH=/home/torre/.opencode/bin:$PATH
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Pipx to PATH
-export PATH="$PATH:/home/torre/.local/bin"
 
 # lolcat MOTD
 if command -v lolcat &>/dev/null && [[ -f ~/Documents/MOTD.txt ]]; then
