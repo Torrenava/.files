@@ -195,6 +195,7 @@ step_homebrew() {
 }
 
 step_pipx() {
+    line
     pen bold cyan "pipx"
     line
 
