@@ -195,21 +195,15 @@ if  command -v brew &>/dev/null; then
 fi
 
 # OpenCode
-if  command -v opencode &>/dev/null; then
-    export PATH=/home/torre/.opencode/bin:$PATH
-fi
+export PATH=/home/torre/.opencode/bin:$PATH
 
 # NVM (Node Version Manager)
-if  command -v nvm &>/dev/null; then
-    export NVM_DIR="$HOME/.nvm"
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Pipx to PATH
-if command -v pipx &>/dev/null; then
-    export PATH="$PATH:/home/torre/.local/bin"
-fi
+export PATH="$PATH:/home/torre/.local/bin"
 
 # lolcat MOTD
 if command -v lolcat &>/dev/null && [[ -f ~/Documents/MOTD.txt ]]; then
