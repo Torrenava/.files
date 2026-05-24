@@ -23,7 +23,7 @@ function wetransfer($action, $file) {
 
 # New Installation
 function TInstall() {
-    sudo winget install eza-community.eza GnuWin32.Grep JanDeDobbeleer.OhMyPosh Git.Git Microsoft.PowerShell GNU.nano schollz.croc sharkdp.bat --silent
+    sudo winget install eza-community.eza GnuWin32.Grep JanDeDobbeleer.OhMyPosh Git.Git Microsoft.PowerShell GNU.nano schollz.croc sharkdp.bat Starship.Starship --silent
 }
 
 # Comandos ls
@@ -46,3 +46,6 @@ function lD(){
 
 # Add Grep Path
 $env:Path += ";C:\Program Files (x86)\GnuWin32\bin"
+
+# Starship
+Invoke-Expression (&starship init powershell)
