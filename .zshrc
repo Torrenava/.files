@@ -184,7 +184,9 @@ export PATH="$HOME/.local/bin:$PATH"
 eval "$(starship init zsh)"
 
 # fzf
-source <(fzf --zsh)
+if fzf --zsh &>/dev/null; then
+	source <(fzf --zsh)
+fi
 
 # fzf-tab
 enable-fzf-tab
