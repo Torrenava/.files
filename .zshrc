@@ -192,9 +192,7 @@ fi
 enable-fzf-tab
 
 # Homebrew
-if  command -v brew &>/dev/null; then
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # OpenCode
 export PATH=/home/$USERNAME/.opencode/bin:$PATH
