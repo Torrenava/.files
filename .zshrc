@@ -197,7 +197,7 @@ if  command -v brew &>/dev/null; then
 fi
 
 # OpenCode
-export PATH=/home/torre/.opencode/bin:$PATH
+export PATH=/home/$USERNAME/.opencode/bin:$PATH
 
 # NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
