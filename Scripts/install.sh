@@ -14,6 +14,13 @@ APT_PACKAGES=(
     unrar-free p7zip-full cabextract
 )
 
+BREW_PACKAGES=(
+    doge Giammarco-Ferranti/deja/deja
+)
+
+PIPX_PACKAGES=(
+)
+
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"
 
 BREW_PREFIX="/home/linuxbrew/.linuxbrew"
@@ -99,6 +106,7 @@ step_zsh_plugins() {
         ["zsh-syntax-highlighting"]="https://github.com/zsh-users/zsh-syntax-highlighting.git"
         ["you-should-use"]="https://github.com/MichaelAquilina/zsh-you-should-use.git"
         ["fzf-tab"]="https://github.com/Aloxaf/fzf-tab.git"
+        ["deja"]="https://github.com/Giammarco-Ferranti/deja"
     )
 
     for name in "${!plugins[@]}"; do
@@ -186,12 +194,14 @@ step_homebrew() {
         eval "$("$BREW_PREFIX/bin/brew" shellenv)" 2>/dev/null || true
     fi
 
-    spin "Installing doge via homebrew..."
-    if brew install doge >/tmp/doge-install.log 2>&1; then
-        check "doge installed"
-    else
-        warn "doge installation failed (check /tmp/doge-install.log)"
-    fi
+    for pkg in "${BREW_PACKAGES[@]}"; do
+        spin "Installing $pkg via homebrew..."
+        if brew install "$pkg" >"/tmp/brew-$pkg-install.log" 2>&1; then
+            check "$pkg installed"
+        else
+            warn "$pkg installation failed (check /tmp/brew-$pkg-install.log)"
+        fi
+    done
 }
 
 step_pipx() {
@@ -206,24 +216,32 @@ step_pipx() {
 
     eval "$("$BREW_PREFIX/bin/brew" shellenv)" 2>/dev/null || true
 
-    if command_exists pipx; then
-        check "pipx already installed"
-        return
-    fi
+    if ! command_exists pipx; then
+        spin "Installing pipx via homebrew..."
+        if ! run brew install pipx; then
+            warn "pipx installation failed"
+            return
+        fi
+        check "pipx installed"
 
-    spin "Installing pipx via homebrew..."
-    if ! run brew install pipx; then
-        warn "pipx installation failed"
-        return
-    fi
-    check "pipx installed"
-
-    spin "Configuring pipx PATH..."
-    if ! run pipx ensurepath; then
-        warn "pipx ensurepath failed"
+        spin "Configuring pipx PATH..."
+        if ! run pipx ensurepath; then
+            warn "pipx ensurepath failed"
+        else
+            check "pipx PATH configured"
+        fi
     else
-        check "pipx PATH configured"
+        check "pipx already installed"
     fi
+
+    for pkg in "${PIPX_PACKAGES[@]}"; do
+        spin "Installing $pkg via pipx..."
+        if run pipx install "$pkg"; then
+            check "$pkg installed"
+        else
+            warn "$pkg installation failed"
+        fi
+    done
 }
 
 step_nvm() {

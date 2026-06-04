@@ -21,16 +21,16 @@ zstyle ':omz:plugins:eza' 'icons' yes
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:z:*' fzf-preview 'eza'
 
-
-
-
 # Config ZSH
 ZSH_THEME="" # robbyrussell
 # Deshabilitado por usar Starship
 HIST_STAMPS="dd/mm/yyyy"
 
+# Homebrew
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Plugins
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide fzf-tab)
+plugins=(git deja zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide fzf-tab)
 # Es necesario activar fzf-tab con el comando "enable-fzf-tab".
 
 # | Plugins Download Commands | Mantenidos en la carpeta Scripts
@@ -140,15 +140,6 @@ function extractPorts() {
     rm extractPorts.tmp
 }
 
-# Set personal aliases, overriding those provided by Oh My Zsh libs,
-# plugins, and themes. Aliases can be placed here, though Oh My Zsh
-# users are encouraged to define aliases within a top-level file in
-# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
 alias zshc="micro ~/.zshrc" # ZSH Config
 alias rzshc="source ~/.zshrc" # Reload ZSH Config
 
@@ -190,9 +181,6 @@ fi
 
 # fzf-tab
 enable-fzf-tab
-
-# Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # OpenCode
 export PATH=/home/$USERNAME/.opencode/bin:$PATH
