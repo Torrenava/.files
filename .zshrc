@@ -30,7 +30,7 @@ HIST_STAMPS="dd/mm/yyyy"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # Plugins
-plugins=(git deja zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide fzf-tab)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting you-should-use aliases sudo zsh-interactive-cd eza fzf zoxide fzf-tab)
 # Es necesario activar fzf-tab con el comando "enable-fzf-tab".
 
 # | Plugins Download Commands | Mantenidos en la carpeta Scripts
