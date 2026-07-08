@@ -2,7 +2,7 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 # Quitar [systemd] del prompt
-[systemd]
+[container]
 disabled = true
 
 # Sets user-defined palette
