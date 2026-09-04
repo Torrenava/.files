@@ -184,6 +184,7 @@ enable-fzf-tab
 
 # OpenCode
 export PATH=/home/$USERNAME/.opencode/bin:$PATH
+[ -f "$HOME/.config/opencode/secrets.env" ] && source "$HOME/.config/opencode/secrets.env"
 
 # NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
