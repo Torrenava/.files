@@ -149,6 +149,7 @@ alias m="micro"
 alias cd="z"
 alias ci="zi"
 alias open="xdg-open"
+alias oc="opencode"
 
 # Alias SSH (s) : Lista los hosts disponibles en el archivo de config de SSH.
 alias s='ssh $(awk "/^Host /{print \$2}" ~/.ssh/config | fzf --prompt="ssh> ")'
